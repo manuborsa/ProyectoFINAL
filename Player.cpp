@@ -3,7 +3,7 @@
 
 Player::Player(float _speed)
 {
-	_texture.loadFromFile("character1.png");
+	_texture.loadFromFile("Textura/Player/character1.png");
 	_body.setTexture(&_texture);
 	_body.setSize(sf::Vector2f(42.0f, 87.0f));
 	_body.setPosition(0, 0);
