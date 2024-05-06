@@ -24,22 +24,22 @@ int main(int argc, char *argv[]){
 	int nColumna = 42;
 	
 	std::ifstream file_map;
-	file_map.open("mapa_cueva.txt");
+	file_map.open("Mapas/mapa_cueva.txt");
 	Mapa map(nFila, nColumna);
 	map.MapCreator(file_map);
 
 	std::ifstream file_fondo;
-	file_fondo.open("fondo_cueva.txt");
+	file_fondo.open("Mapas/fondo_cueva.txt");
 	Mapa fondo(nFila, nColumna);
 	fondo.MapCreator(file_fondo);
 	
 	std::ifstream file_obstacle;
-	file_obstacle.open("plataformas_cueva.txt");
+	file_obstacle.open("Mapas/plataformas_cueva.txt");
 	Mapa obstacle(nFila, nColumna);
 	obstacle.MapCreator(file_obstacle);
 	
 	std::ifstream file_dead;
-	file_dead.open("muerte.txt");
+	file_dead.open("Mapas/muerte.txt");
 	Mapa dead(nFila, nColumna);
 	dead.MapCreator(file_dead);
 	

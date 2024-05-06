@@ -117,10 +117,10 @@ void Player::update()
 				//std::cout << "CAYENDO\n";
 				break;
 				
-			case ATACANDO:
-			_body.move(0, -_jumpVelocity);
-			_estado = ESTADOS::CAYENDO;
-			break;
+//			case ATACANDO:
+//			_body.move(0, -_jumpVelocity);
+//			_estado = ESTADOS::CAYENDO;
+//			break;
 		}
 	std::cout << _jumpVelocity << std::endl;
 	_jumpVelocity-=0.5;

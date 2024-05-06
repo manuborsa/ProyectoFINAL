@@ -15,7 +15,7 @@ tab_width=4
 tab_use_spaces=0
 explorer_path=.
 inherits_from=
-current_source=Player.h
+current_source=Player.cpp
 path_char=\
 [source]
 path=main.cpp
@@ -23,15 +23,15 @@ cursor=66:0
 open=true
 [source]
 path=Mapa.cpp
-cursor=29:9
+cursor=55:29
 open=true
 [source]
 path=Player.cpp
-cursor=117:10
+cursor=124:0
 open=true
 [source]
 path=System.cpp
-cursor=89:1
+cursor=96:1
 marker=90
 open=true
 [source]
