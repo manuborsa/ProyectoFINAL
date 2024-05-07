@@ -3,7 +3,6 @@
 #include "Mapa.h"
 #include "Player.h"
 #include "System.h"
-#include "MainCamera.h"
 #include <fstream>
 
 using namespace sf;
@@ -18,7 +17,6 @@ int main(int argc, char *argv[]){
 	float cameraOffsetX = 400;
 	float cameraOffsetY = 300;
 
-	MainCamera camera;
 	Player player(0.5);
 	int nFila = 31;
 	int nColumna = 42;
