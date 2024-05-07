@@ -5,10 +5,6 @@
 
 using namespace sf;
 
-/**
-* @brief Clase que se encarga de manipular la visualización de escena, hereda de View por ende incorpora todos sus métodos y propiedades
-*/
-
 class Camera : public View {
 private:
 	
