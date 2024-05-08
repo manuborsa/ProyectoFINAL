@@ -58,6 +58,9 @@ Mapa::Mapa(int _filas, int _columnas)
 		case 12:
 			_texture[i].loadFromFile("Textura/Mapa/techo_izq.png");
 			break;
+		case 13:
+			_texture[i].loadFromFile("Textura/Mapa/piedras.png");
+			break;
 		}
 	}
 }
@@ -117,6 +120,9 @@ void Mapa::MapCreator(std::ifstream& file)
 				break;
 			case 12:
 				tilMap[i][j].setTexture(_texture[12]);
+				break;
+			case 13:
+				tilMap[i][j].setTexture(_texture[13]);
 				break;
 			}
 			tilMap[i][j].setPosition(j * 32, i * 32); 

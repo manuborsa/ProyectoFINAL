@@ -35,7 +35,7 @@ void Player::cmd()
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			_estado = ESTADOS::CAMINANDO_ATRAS;
-			_velocity.x=-3;
+			_velocity.x=-4;
 		};
 	}
 	if(_estado == ESTADOS::QUIETO && !_colisionIzq || _estado == ESTADOS::CAYENDO && !_colisionIzq || _estado == ESTADOS::CAMINANDO_ADELANTE && !_colisionIzq)
@@ -43,7 +43,7 @@ void Player::cmd()
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			_estado = ESTADOS::CAMINANDO_ADELANTE;
-			_velocity.x=3;
+			_velocity.x=4;
 		};
 	}
 	
@@ -63,6 +63,10 @@ void Player::cmd()
 		{
 			_estado = ESTADOS::SALTANDO;
 			_jumpVelocity = 10;
+		}
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1) && sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			_jumpVelocity = -16;
 		}
 	}
 	_jump = false;	
