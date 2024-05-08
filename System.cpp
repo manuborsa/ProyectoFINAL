@@ -21,10 +21,10 @@ System::~System()
 {
 	
 }
-void System::update(Camera *camara)
+void System::update()
 {	
-	_mainCamera.FollowAndUpdate(_player.getPosition(), camara);
 	_player.update();
+	_mainCamera.FollowAndUpdate(_player.getPosition(), &_mainCamera);
 
 }
 void System::cmd()

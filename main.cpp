@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
 	w.setFramerateLimit(60);
 	float cameraOffsetX = 400;
 	float cameraOffsetY = 300;
-	Camera mainCamera(&w, x, y, x, y); 
+	Camera mainCamera(&w, x, y, 1344, 992); 
 	
 	
 	Player player(0.5);
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]){
 		w.clear();
 		sistema.CheckCollision();
 		sistema.cmd();
-		sistema.update(&mainCamera);
+		sistema.update();
 		sistema.draw(w);
 
 
