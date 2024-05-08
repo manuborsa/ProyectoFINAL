@@ -16,7 +16,9 @@ int main(int argc, char *argv[]){
 	w.setFramerateLimit(60);
 	float cameraOffsetX = 400;
 	float cameraOffsetY = 300;
-
+	Camera mainCamera(&w, x, y, x, y); 
+	
+	
 	Player player(0.5);
 	int nFila = 31;
 	int nColumna = 42;
@@ -41,7 +43,7 @@ int main(int argc, char *argv[]){
 	Mapa dead(nFila, nColumna);
 	dead.MapCreator(file_dead);
 	
-	System sistema(player, map, fondo, obstacle, dead, nFila, nColumna, file_map);
+	System sistema(player, mainCamera, map, fondo, obstacle, dead, nFila, nColumna, file_map);
 
 	while(w.isOpen()) {
 		Event e;
@@ -49,17 +51,17 @@ int main(int argc, char *argv[]){
 			if(e.type == Event::Closed)
 				w.close();	
 		}
-
-		float cameraX = sistema.getPositionPlayer().x - cameraOffsetX;
 		
-		float cameraY = sistema.getPositionPlayer().y - cameraOffsetY;
-		
-		w.setView(sf::View(sf::FloatRect(cameraX, cameraY, x, y)));
+//		float cameraX = sistema.getPositionPlayer().x - cameraOffsetX;
+//		
+//		float cameraY = sistema.getPositionPlayer().y - cameraOffsetY;
+//		
+//		w.setView(sf::View(sf::FloatRect(cameraX, cameraY, x, y)));
 		
 		w.clear();
 		sistema.CheckCollision();
 		sistema.cmd();
-		sistema.update();
+		sistema.update(&mainCamera);
 		sistema.draw(w);
 
 

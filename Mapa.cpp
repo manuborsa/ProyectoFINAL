@@ -58,8 +58,6 @@ Mapa::Mapa(int _filas, int _columnas)
 		case 12:
 			_texture[i].loadFromFile("Textura/Mapa/techo_izq.png");
 			break;
-			
-		
 		}
 	}
 }

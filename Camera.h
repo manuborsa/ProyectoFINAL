@@ -1,5 +1,4 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -7,49 +6,18 @@ using namespace sf;
 
 class Camera : public View {
 private:
-	
+	//Atributos
 	RenderWindow *window;
 	Vector2f windowDimension;
 	Vector2f worldDimension;
 	Vector2f cameraPosition;
 	
-	
-	void CalculateCameraPosition(Vector2f target) {
-		cameraPosition = target;
-		if (cameraPosition.x < windowDimension.x / 2) {
-			cameraPosition.x = windowDimension.x / 2;
-		}
-		if (cameraPosition.x > worldDimension.x - windowDimension.x / 2) {
-			cameraPosition.x = worldDimension.x - windowDimension.x / 2;
-		}
-		if (cameraPosition.y < windowDimension.y / 2) {
-			cameraPosition.y = windowDimension.y / 2;
-		}
-		if (cameraPosition.y > worldDimension.y - windowDimension.y / 2) {
-			cameraPosition.y = worldDimension.y - windowDimension.y / 2;
-		}
-	}
-	
-	void MoveCamera() {
-		setCenter(cameraPosition);
-	}
+	//Metodos private
+	void CalculateCameraPosition(Vector2f target);
+	void MoveCamera();
 	
 public:
-
-	Camera(RenderWindow *w, int width, int height, int worldLimitWidth, int worldLimitHeight) {
-		window = w;
-		windowDimension.x = width;
-		windowDimension.y = height;
-		worldDimension.x = worldLimitWidth;
-		worldDimension.y = worldLimitHeight;
-		setSize(width, height);
-		setCenter(worldLimitWidth / 2, worldLimitHeight / 2);
-	}
-	
-
-	void FollowAndUpdate(Vector2f target, Camera *camera) {
-		CalculateCameraPosition(target);
-		MoveCamera();
-		window->setView(*camera);
-	}
+	Camera();
+	Camera(RenderWindow *w, int width, int height, int worldLimitWidth, int worldLimitHeight);
+	void FollowAndUpdate(Vector2f target, Camera *camera);
 };

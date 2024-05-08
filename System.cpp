@@ -5,8 +5,9 @@
 #include <fstream>
 #include <iostream>
 
-System::System(Player& player, Mapa& mapa, Mapa& fondo, Mapa& obstacle, Mapa& dead, int anchoMapa, int altoMapa, std::ifstream& fileMap)
+System::System(Player& player, Camera& camara, Mapa& mapa, Mapa& fondo, Mapa& obstacle, Mapa& dead, int anchoMapa, int altoMapa, std::ifstream& fileMap)
 {
+	_mainCamera = camara;
 	_player = player;
 	_mapa = mapa;
 	_fondo = fondo;
@@ -20,8 +21,9 @@ System::~System()
 {
 	
 }
-void System::update()
-{
+void System::update(Camera *camara)
+{	
+	_mainCamera.FollowAndUpdate(_player.getPosition(), camara);
 	_player.update();
 
 }
@@ -99,6 +101,7 @@ void System::draw(sf::RenderWindow& window)
 	{
 		for(int j=0; j<_altoMapa; j++)
 		{	
+			
 			window.draw(_fondo.getSprite(i,j));
 			window.draw(_mapa.getSprite(i,j));
 			window.draw(_obstacle.getSprite(i,j));

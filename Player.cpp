@@ -69,11 +69,11 @@ void Player::cmd()
 	_colisionIzq = false;
 	_colisionDer = false;
 	
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
-		{
-			_estado = ESTADOS::ATACANDO;
-		}
-		;
+//		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
+//		{
+//			_estado = ESTADOS::ATACANDO;
+//		}
+		
 }
 
 void Player::update()
