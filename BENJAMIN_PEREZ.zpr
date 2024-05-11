@@ -16,14 +16,15 @@ tab_use_spaces=0
 explorer_path=.
 inherits_from=
 current_source=Player.cpp
+current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=12:12
+cursor=42:46
 open=true
 [source]
 path=Mapa.cpp
-cursor=123:10
+cursor=37:51
 open=true
 [source]
 path=Player.cpp
